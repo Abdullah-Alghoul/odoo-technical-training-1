@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="ninas_group_student" model="res.groups">
+			<field name="name">Student</field>
+			<field name="category_id" ref="base.module_category_ninas_academy"/>
+			<field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
+		</record>
+
+		<record id="ninas_group_instructor" model="res.groups">
+			<field name="name">Instructor</field>
+			<field name="category_id" ref="base.module_category_ninas_academy"/>
+			<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		</record>
+
+		<record id="ninas_group_registrar" model="res.groups">
+			<field name="name">Student Affairs</field>
+			<field name="category_id" ref="base.module_category_ninas_academy"/>
+			<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+		</record>
+
+
+		<record id="ninas_student_student_rule" model="ir.rule">
+			<field name="name">Ninas Student</field>
+			<field name="model_id" ref="model_ninas_student"/>
+			<field name="groups" eval="[(4,ref('ninas_group_student'))]"/>
+			<field name="domain_force">[('user_id','=',user.id)]</field>
+		</record>
+	</data>
+</odoo>

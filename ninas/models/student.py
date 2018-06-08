@@ -71,7 +71,7 @@ class Student(models.Model):
 
     active = fields.Boolean(
         string='Active', default='t',
-        groups="base.no_group_one")
+        groups='ninas.ninas_group_registrar')
 
     user_id = fields.Many2one(
         comodel_name='res.users',
@@ -120,7 +120,7 @@ class Student(models.Model):
 
     @api.multi
     def create_student_id(self):
-        student = self.search([('id','!=',self.id),('active','in',[True, False])], order='name DESC', limit=1)
+        student = self.search([('id','!=',self.id),'|',('active','!=',False), ('active','=',False)], order='name DESC', limit=1)
         if student:
             previous_student_id = student.name
             return 'S'+ str(int(previous_student_id[1:])+1)

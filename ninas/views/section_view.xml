@@ -36,7 +36,7 @@
                             <field name="number_of_students" class="oe_read_only"/>
                         </group>
                         <notebook>
-                            <page name="students" string="Students">
+                            <page name="students" string="Students" groups="ninas.ninas_group_instructor,ninas.ninas_group_registrar">
                                 <field name="student_ids">
                                     <tree>
                                         <field name="name"/>

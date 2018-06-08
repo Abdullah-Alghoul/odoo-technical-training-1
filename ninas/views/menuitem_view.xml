@@ -3,15 +3,17 @@
     <data>
         <menuitem name="Ninas Academy" id="ninas_main_menu" web_icon="ninas,static/icon/icon-classes.png"/>
         
-        <menuitem name="Courses" id="ninas_course_menu" parent="ninas_main_menu" action="ninas_course_action" sequence="1"/>
+        <menuitem name="Courses" id="ninas_course_menu" parent="ninas_main_menu" action="ninas_course_action" sequence="1" groups="ninas_group_instructor,ninas_group_registrar"/>
         
-        <menuitem name="Sections" id="ninas_section_menu" parent="ninas_main_menu" action="ninas_section_action" sequence="2"/>
+        <menuitem name="Sections" id="ninas_section_menu" parent="ninas_main_menu" action="ninas_section_action" sequence="2" groups="ninas_group_instructor,ninas_group_registrar"/>
         
 
-        <!--Student Menus-->
-        <menuitem name="Students" id="ninas_student_main_menu" parent="ninas_main_menu" sequence="3"/>
-        <menuitem name="Students" id="ninas_student_menu" parent="ninas_student_main_menu" action="ninas_student_action" sequence="1"/>
-        <menuitem name="Settings" id="ninas_student_config_menu" parent="ninas_student_main_menu" action="ninas_student_config_action" sequence="2"/>
+        <!--Instructor & Registrar Menus-->
+        <menuitem name="Students" id="ninas_student_main_menu" parent="ninas_main_menu" sequence="3" groups="ninas_group_instructor,ninas_group_registrar"/>
+        <menuitem name="Students" id="ninas_student_menu" parent="ninas_student_main_menu" action="ninas_student_action" sequence="1" groups="ninas_group_instructor,ninas_group_registrar"/>
+        <menuitem name="Settings" id="ninas_student_config_menu" parent="ninas_student_main_menu" action="ninas_student_config_action" sequence="2" groups="ninas_group_registrar"/>
 
+
+        <menuitem name="My Profile" id="ninas_student_profile_menu" parent="ninas_main_menu" sequence="1" action="ninas_student_action" groups="ninas_group_student"/>
     </data>
 </odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+        <record id="ninas_student_1" model="ninas.student">
+            <field name="first_name">Student 1</field>
+            <field name="last_name">Student 1</field>
+            <field name="email">student1@ninas.com</field>
+            <field name="phone">+1808-898-8973</field>
+            <field name="gender">male</field>
+            <field name="age" eval="20"/>
+        </record>
+
+        <record id="ninas_student_2" model="ninas.student">
+            <field name="first_name">Student 2</field>
+            <field name="last_name">Student 2</field>
+            <field name="email">student2@ninas.com</field>
+            <field name="phone">+1808-898-8973</field>
+            <field name="gender">female</field>
+            <field name="age" eval="20"/>
+        </record>
+	</data>
+</odoo>
