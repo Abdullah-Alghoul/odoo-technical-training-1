@@ -4,9 +4,11 @@
 Odoo Technical Training on v11
 
 
-Credits
-=======
-Tosin Komolafe <hello@tosinkomolafe.com>
+Learning Outcome
+================
+ * Understand the development concepts and architecture
+ * Develop a new Odoo module
+ * Integrate any third-party tool of Odoo
 
 Contributors
 ------------
