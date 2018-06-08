@@ -3,12 +3,19 @@
 
 Odoo Technical Training on v11
 
-Facilitator: Tosin Komolafe <hello@tosinkomolafe.com>
+
+Credits
+=======
+Tosin Komolafe <hello@tosinkomolafe.com>
+
+Contributors
+------------
+
+ * Tosin Komolafe <hello@tosinkomolafe.com>
 
 
-
-##Outline
-
+Outline
+=======
 Introduction & History of Odoo
 Technical Fundamentals of Odoo Addons
 Inheritance
