@@ -1,2 +1,4 @@
-# odoo-technical-training
-Odoo Technical Training
+# Odoo Technical Training
+
+
+Odoo Technical Training on v11
