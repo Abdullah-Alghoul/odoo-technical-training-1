@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Ninas Academy" id="ninas_main_menu" web_icon="ninas,static/icon/icon-classes.png"/>
+        
+        <menuitem name="Courses" id="ninas_course_menu" parent="ninas_main_menu" action="ninas_course_action" sequence="1"/>
+        
+        <menuitem name="Sections" id="ninas_section_menu" parent="ninas_main_menu" action="ninas_section_action" sequence="2"/>
+        
+
+        <!--Student Menus-->
+        <menuitem name="Students" id="ninas_student_main_menu" parent="ninas_main_menu" sequence="3"/>
+        <menuitem name="Students" id="ninas_student_menu" parent="ninas_student_main_menu" action="ninas_student_action" sequence="1"/>
+        <menuitem name="Settings" id="ninas_student_config_menu" parent="ninas_student_main_menu" action="ninas_student_config_action" sequence="2"/>
+
+    </data>
+</odoo>

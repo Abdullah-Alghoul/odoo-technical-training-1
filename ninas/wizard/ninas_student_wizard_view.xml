@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record model="ir.ui.view" id="ninas_student_wizard_form">
+		<field name="name">ninas.student.wizard.form</field>
+		<field name="model">ninas.student.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<field name="section_ids">
+						<tree>
+							<field name="name"/>
+							<field name="course_id"/>
+							<field name="start_time"/>
+							<field name="end_time"/>
+							<field name="instructor_id"/>
+						</tree>
+					</field>
+				</sheet>
+				<footer>
+					<button string="Join" name="join_sections" type="object" class="oe_highlight"/>
+					<button string="Close" special="cancel" type="object" class="btn-default"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<act_window name="Select Sections"
+				res_model="ninas.student.wizard"
+				src_model="ninas.student"
+				view_mode="form"
+				view_id="ninas_student_wizard_form"
+				target="new"
+				key2="client_action_multi"
+				id="ninas_student_wizard_action"/>
+
+</odoo>

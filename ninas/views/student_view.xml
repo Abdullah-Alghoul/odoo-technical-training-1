@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ninas_student_tree_view">
+            <field name="name">ninas.student.tree</field>
+            <field name="model">ninas.student</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree colors="pink:state=='new';blue:state=='accepted';red:state=='refused'">
+                    <field name="name"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="gender"/>
+                    <field name="level"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="state" invisible="1"/>
+                </tree>                    
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ninas_student_form_view">
+            <field name="name">ninas.student.form</field>
+            <field name="model">ninas.student</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <header>
+                        <button name="accept" string="Accept" type="object" class="btn btn-primary" states="new,refused"/>
+                        <button name="refuse" string="Refuse" type="object" class="btn btn-danger" states="new"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group col="4" colspan="4">
+                            <field name="name" readonly="1"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="gender"/>
+                            <field name="level"/>
+                            <field name="age"/>
+                            <field name="email" widget="email"/>
+                            <field name="phone"/>
+                            <field name="address"/>
+                            <field name="city"/>
+                            <field name="state_id"/>
+                            <field name="country_id"/>
+                        </group>
+                        <notebook>
+                            <page name="sections" string="Registered Sections">
+                                <field name="section_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="start_time"/>
+                                        <field name="end_time"/>
+                                        <field name="instructor_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="settings" string="Settings">
+                                <group>
+                                    <field name="user_id"/>
+                                    <button name="create_user" string="New User" type="object" attrs="{'invisible':[('user_id','!=',False)]}" class="btn btn-primary"/>
+                                    <button name="create_user" string="Update User" type="object" attrs="{'invisible':[('user_id','=',False)]}" class="btn btn-danger"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ninas_student_search_view">
+            <field name="name">ninas.student.search</field>
+            <field name="model">ninas.student</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="level"/>
+                    <field name="state"/>
+
+                    <filter string="Level" name="level" context="{'group_by':'level'}"/>
+                    <filter string="Country" name="country_id" context="{'group_by':'country_id'}"/>
+                    <filter string="Status" name="state" context="{'group_by':'state'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ninas_student_action">
+            <field name="name">Students</field>
+            <field name="res_model">ninas.student</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="ninas_student_config_tree_view">
+            <field name="name">ninas.student.config_tree</field>
+            <field name="model">ninas.student.config</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <field name="email_template_refusal_id"/>
+                <field name="email_template_acceptance_id"/>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ninas_student_config_form_view">
+            <field name="name">ninas.student.config.form</field>
+            <field name="model">ninas.student.config</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Student Config">
+                    <sheet>
+                        <group col="4" colspan="4">
+                            <field name="email_template_refusal_id" domain="[('model_id.model','=','ninas.student')]"/>
+                            <field name="email_template_acceptance_id" domain="[('model_id.model','=','ninas.student')]"/>
+                        </group> 
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ninas_student_config_action">
+            <field name="name">Settings</field>
+            <field name="res_model">ninas.student.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>
