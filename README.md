@@ -52,3 +52,4 @@ For a many2many field, a list of tuples is expected. Here is the list of tuple t
  * Overview: https://www.odoo.com/blog/odoo-news-5/post/the-odoo-story-56
  * Odoo Decorator: http://odoo-new-api-guide-line.readthedocs.io/en/latest/decorator.html
  * Odoo API: https://www.odoo.com/documentation/8.0/api_integration.html
+ * Odoo Documentation: https://www.odoo.com/documentation/11.0/
