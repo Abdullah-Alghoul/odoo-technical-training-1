@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="index">
+        <t t-call="website.layout">
+            <t t-set="title">Sections</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <t t-foreach="sections" t-as="section">
+
+                        <p>
+                            <a t-attf-href="/ninas/{{ slug(section) }}">
+                                <t t-esc="section.name"/>
+                            </a>
+                        </p>
+                        <!--
+                        <p>ID:<t t-esc="section.id"/> Name: <t t-esc="section.name"/></p>
+                        <p>Code: <t t-esc="section.code"/></p>
+                        <p>No. of Students: <t t-esc="section.number_of_students"/></p>
+                        <p>Instructor: <t t-esc="section.instructor_id.name"/></p>
+                        <p>Time: <t t-esc="section.start_time"/> - <t t-esc="section.end_time"/></p>
+                        <p>Date: <t t-esc="section.start_date"/> - <t t-esc="section.end_date"/></p>
+                        -->
+                    </t>
+                </div>
+            </div>
+        </t>
+
+
+        <!--title>Sections</title>
+        <t t-foreach="sections" t-as="section">
+            <p>ID:<t t-esc="section.id"/> Name: <t t-esc="section.name"/></p>
+            <p>Code: <t t-esc="section.code"/></p>
+            <p>No. of Students: <t t-esc="section.number_of_students"/></p>
+            <p>Instructor: <t t-esc="section.instructor_id.name"/></p>
+            <p>Time: <t t-esc="section.start_time"/> - <t t-esc="section.end_time"/></p>
+            <p>Date: <t t-esc="section.start_date"/> - <t t-esc="section.end_date"/></p>
+        </t-->
+    </template>
+
+    <template id="section">
+        <t t-call="website.layout">
+            <t t-set="title">Section</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <p>ID:<t t-esc="section.id"/> Name: <t t-esc="section.name"/></p>
+                    <p>Code: <t t-esc="section.code"/></p>
+                    <p>No. of Students: <t t-esc="section.number_of_students"/></p>
+                    <p>Instructor: <t t-esc="section.instructor_id.name"/></p>
+                    <p>Time: <t t-esc="section.start_time"/> - <t t-esc="section.end_time"/></p>
+                    <p>Date: <t t-esc="section.start_date"/> - <t t-esc="section.end_date"/></p>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

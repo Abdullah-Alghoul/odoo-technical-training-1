@@ -17,7 +17,7 @@
     'application':True,
     'installable':True,
     'auto-install':False,
-    'depends': ['base', 'hr', 'mail'],
+    'depends': ['base', 'hr', 'mail', 'website'],
     'external_dependencies': {
         'python':[],
         'bin':[]
@@ -31,6 +31,9 @@
             'views/menuitem_view.xml',
             'data/ninas_student_data.xml',
             'wizard/ninas_student_wizard_view.xml',
+            'controllers/web_templates.xml'
+            #'report/ninas_student_report.xml'
+            #'report/ninas_student_report_template.xml',
             ],
     'css':[],
     'demo':['demo/ninas_student_demo.xml'],

@@ -6,3 +6,4 @@ access_ninas_course_student,ninas.course.student,model_ninas_course,ninas_group_
 access_ninas_section_student,ninas.section.student,model_ninas_section,ninas_group_student,1,0,0,0
 access_ninas_instrutor_student,ninas.instructor.student,model_hr_employee,ninas_group_student,1,0,0,0
 access_ninas_student_config_student,ninas.student.config.student,model_ninas_student_config,ninas_group_student,1,0,0,0
+access_ninas_section_public,ninas.section.public,model_ninas_section,,1,0,0,0

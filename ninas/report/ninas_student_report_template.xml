@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="ninas_student_report">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="student">
+				<t t-call="web.external_layout">
+					<div class="page">
+						<table class="table table-condensed">
+							<tr>
+								<td>
+									Student ID:<span t-field="student.name"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									First Name:<span t-field="student.first_name"/>
+								</td>
+								<td>
+									Last Name:<span t-field="student.last_name"/>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Level:<span t-field="student.level"/>
+								</td>
+								<td>
+									Age:<span t-field="student.age"/>
+								</td>
+							</tr>
+						</table>
+
+						<table class="table table-condensed">
+							<tr>
+								<th><strong>Section Name</strong></th>
+								<th><strong>Course Name</strong></th>
+								<th><strong>Course Code</strong></th>
+							</tr>
+
+							<tr>
+								<td>
+									<span t-esc="student.student_id()"/>
+								</td>
+							</tr>
+							<!--t t-foreach="get_sections.get(student.id, [])" t-as="section">
+								<tr>
+									<td>
+										<span t-esc="section['name']"/>
+									</td>
+									<td>
+										<span t-esc="section['course_name']"/>
+									</td>
+									<td>
+										<span t-esc="section['course_code']"/>
+									</td>
+								</tr>
+							</t-->
+						</table>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>

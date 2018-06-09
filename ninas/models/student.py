@@ -127,6 +127,9 @@ class Student(models.Model):
         return 'S1000001'
 
 
+        
+    def student_id(self):
+        return self.id
 
     @api.one
     def get_student_sections(self):
